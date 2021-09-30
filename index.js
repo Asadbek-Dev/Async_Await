@@ -17,11 +17,25 @@ function processRequest(response){
     })
 }
 
-makeRequest('Google').then(response=>{
-    console.log('Response Received')
-    return processRequest(response)
-}).then(processedResponse=>{
-    console.log(processedResponse);
-}).catch(err =>{
-    console.log(err);
-})
+// makeRequest('Google').then(response=>{
+//     console.log('Response Received')
+//     return processRequest(response)
+// }).then(processedResponse=>{
+//     console.log(processedResponse);
+// }).catch(err =>{
+//     console.log(err);
+// })
+
+
+async function doWork(){
+    try {
+        const response = await makeRequest('Google')
+        console.log('Response Received');
+        const processedResponse = await processRequest(response)
+        console.log(processedResponse);
+    } catch (err) {
+        console.log(err);
+    }
+   
+}
+doWork()
