@@ -27,6 +27,7 @@ function processRequest(response){
 // })
 
 
+// async & await
 async function doWork(){
     try {
         const response = await makeRequest('Google')
