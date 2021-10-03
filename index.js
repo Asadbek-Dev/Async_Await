@@ -1,3 +1,4 @@
+// Promise
 function makeRequest(location){
     return new Promise((resolve,reject)=>{
         console.log(`Making Request to ${location}`)
